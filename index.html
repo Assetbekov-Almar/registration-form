@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="style.css">
+	<title>Registration form</title>
+</head>
+<body>
+<form action="file.php" id="registration-form" class="needs-validation" novalidate method="POST" autocomplete="off">
+	<div class="registration-data border border-primary rounded">
+
+		<div class="registration-login registration-input-details required-field">
+			<label for="login">Логин:</label>
+			<input type="text" name="login" class="form-control" id="login" required>
+			<div class="invalid-feedback">
+				Укажите логин, пожалуйста.
+			</div>
+			<div class="invalid-feedback login-taken-or-reserved custom-error-message d-none">
+				Логин уже занят или зарезервирован системой, придумайте другой логин!
+			</div>
+		</div>
+
+		<div class="registration-invitation-code registration-input-details required-field">
+			<label for="invitation-code">Пригласительный код:</label>
+			<input type="text" name="invitation-code" class="form-control" id="invitation-code" required>
+			<div class="invalid-feedback">
+				Укажите пригласительный код, пожалуйста.
+			</div>
+			<div class="invalid-feedback invitation-code-wrong-or-used custom-error-message d-none">
+				Пригласительный код введён неверно или уже использован!
+			</div>
+		</div>
+
+		<div class="registration-nickname registration-input-details required-field">
+			<label for="nickname">Имя(псевдоним):</label>
+			<input type="text" name="nickname" class="form-control" id="nickname" required>
+			<div class="invalid-feedback">
+				Укажите имя(псевдоним), пожалуйста.
+			</div>
+		</div>
+
+		<div class="registration-telegram registration-input-details">
+			<label for="telegram">Телеграм:</label>
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+					<div class="input-group-text">@</div>
+				</div>
+				<input type="text" name="telegram" class="form-control" id="telegram">
+			</div>
+		</div>
+
+		<div class="registration-password registration-input-details required-field">
+			<label for="password">Пароль:</label>
+			<div class="input-group">
+				<input type="password" name="password" class="form-control password" id="password" required>
+				<div class="input-group-append">
+					<div class="btn btn-light rounded-right password-btn">
+						<i class="fas fa-eye show-password-btn"></i>
+						<i class="fas fa-eye-slash hide-password-btn"></i>
+					</div>
+				</div>
+				<div class="invalid-feedback password-not-entered">
+					Укажите пароль, пожалуйста.
+				</div>
+			</div>
+			<div class="invalid-feedback password-invalid custom-error-message d-none">
+				Пароль не соответствует требованиям!
+			</div>
+		</div>
+	
+		<div class="registration-password-confirm registration-input-details required-field">
+			<label for="password-confirm">Пароль:</label>
+			<input type="password" name="password-confirm" class="form-control password" id="password-confirm" required>
+			<div class="invalid-feedback passwords-match-error custom-error-message d-none">
+				Пароли не совпадают.
+			</div>
+		</div>
+
+		<div class="registration-capcha-image">
+			<div class="capcha-image border border-primary"></div>
+		</div>
+
+		<div class="registration-capcha-code registration-input-details required-field">
+			<label for="capcha-code">Код с картинки:</label>
+			<input type="text" name="capcha-code" class="form-control" id="capcha-code" required>
+			<div class="invalid-feedback capcha-code-wrong custom-error-message d-none">
+				Неверно введён код с картинки!
+			</div>
+		</div>
+
+	</div>
+		
+	<div class="submit-form-section">
+		<input class="btn btn-primary btn-lg submit-btn" type="submit" value="Submit">
+	</div>
+
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
